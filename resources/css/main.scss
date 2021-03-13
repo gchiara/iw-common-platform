@@ -1,0 +1,238 @@
+$main-color: #0c4475;
+$main-color-lighter: #2c6495;
+$btn-default-color: #2a7aae;
+
+//MAIN
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.page-content-main {
+    background-color: #f4f5f7;
+}
+
+//NAV
+
+nav {
+    background-color: $main-color;
+    color: #fff;
+    .nav-logo {
+        height: 40px;
+    }
+    .nav-link {
+        align-items: center;
+        display: inline-flex;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 0.25rem;
+        transition: .4s all;
+        color: #ccc;
+        &.active, &:hover {
+            color: #fff;
+            //border-bottom: 3px solid #fff;
+        }
+    }
+}
+
+//HEADERS
+
+.page-header {
+    background-color: $main-color-lighter;
+    h2 {
+        margin-top: 10px;
+        font-size: 25px;
+        font-weight: 300;
+    }
+}
+.header-description {
+    margin: 20px 0;
+    color: #fff;
+    font-size: 13px;
+    line-height: 150%;
+}
+
+//BUTTONS
+
+.btn-default {
+    display: inline-block;
+    background: $btn-default-color;
+    transition: .4s background;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 3px 10px;
+    &:hover {
+        background: $main-color-lighter;
+    }
+    &.btn-red {
+        background: #f05252;
+        &:hover {
+            background: #d03232;
+        }
+    }
+    &.btn-large {
+        font-size: 16px;
+        padding: 5px 15px;
+    }
+}
+.btn-icon-small {
+    vertical-align: middle;
+    margin-right: 10px;
+    font-size: 13px;
+}
+.btn-icon-medium {
+    vertical-align: middle;
+    margin-right: 10px;
+    font-size: 18px;
+}
+.btn-icon-only {
+    vertical-align: middle;
+    font-size: 14px;
+    position: relative;
+    top: -1px;
+}
+
+//TABLES
+.list-title {
+    font-size: 24px;
+    text-align: left;
+    display: block;
+    color: #2c6495;
+}
+.list-count-text {
+    font-size: 13px;
+    text-align: left;
+    display: block;
+    color: #000;
+}
+.data-entry-table {
+    margin-top: 30px;
+    thead {
+        tr {
+            th {
+                color: $main-color;
+            }
+        }
+    }
+    tbody {
+        tr {
+            &:hover {
+                background: #f4f5f6;
+            }
+            td {
+
+            }
+        }
+    }
+}
+.data-entry-title {
+    font-weight: 600;
+}
+.data-entry-description {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.data-entry-downloads {
+    font-size: 13px;
+}
+.data-entry-date {
+    font-size: 13px;
+}
+.actions-column {
+    min-width: 300px;
+}
+
+.users-list {
+    .user-name {
+        font-size: 13px;
+        font-weight: 600;
+    }
+    .user-email {
+        font-size: 13px;
+    }
+    .user-org {
+        font-size: 13px;
+    }
+    .user-role {
+        font-size: 13px;
+    }
+}
+
+//FILTERS
+.filters-container {
+    margin-bottom: 30px;
+    button {
+
+    }
+}
+
+//ADMIN PANELS
+
+.admin-form {
+    input, textarea, select {
+        border-radius: 2px;
+        margin-bottom: 10px;
+        display: block;
+    }
+    .custom-file {
+        margin: 10px auto;
+    }
+    .text-danger {
+        color: #cc0000;
+        font-weight: 600;
+        margin-bottom: 7px;
+        display: inline-block;
+    }
+    button[type=submit] {
+        margin: 30px auto 0 auto;
+    }
+}
+
+.admin-panel-block {
+    border-radius: 5px;
+    background: #ccaa00;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    padding: 90px 0;
+    transition: .4s all;
+    &.datasets-admin-block {
+        background: #42b983;
+        &:hover {
+            background: #32a973;
+        }
+    }
+    &.platforms-admin-block {
+        background: #2a7aae;
+        &:hover {
+            background: #1a6a9e;
+        }
+    }
+    &.users-admin-block {
+        background: #ff8833;
+        &:hover {
+            background: #ef7823;
+        }
+    }
+    i {
+        display: block;
+        margin-bottom: 20px;
+        font-size: 60px;
+    }
+}
+
+//FOOTER
+footer {
+    background: #e3e7ef;
+    .footer-inner {
+        padding: 30px;
+        font-size: 13px;
+        color: #333;
+        a {
+            color: #222;
+            text-decoration: underline;
+        }
+    }
+}
+
+//VARIOUS
