@@ -93,6 +93,7 @@ nav {
 }
 
 //TABLES
+
 .list-title {
     font-size: 24px;
     text-align: left;
@@ -159,6 +160,7 @@ nav {
 }
 
 //FILTERS
+
 .filters-container {
     margin-bottom: 30px;
     button {
@@ -166,16 +168,30 @@ nav {
     }
 }
 
-//ADMIN PANELS
+//ADMIN PANELS and FORMS
 
 .admin-form {
     input, textarea, select {
         border-radius: 2px;
+        display: block;
+        margin-bottom: 15px;
+    }
+    .form-field-default {
+        background-color: #f4f6f7;
+    }
+    .form-field-label {
         margin-bottom: 10px;
         display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: $main-color;
+        text-transform: uppercase;
     }
     .custom-file {
         margin: 10px auto;
+    }
+    .custom-file-label {
+        
     }
     .text-danger {
         color: #cc0000;
@@ -222,6 +238,7 @@ nav {
 }
 
 //FOOTER
+
 footer {
     background: #e3e7ef;
     .footer-inner {

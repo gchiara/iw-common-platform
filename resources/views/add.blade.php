@@ -11,15 +11,18 @@
         
             <form method="POST" action="/dataset" enctype="multipart/form-data" class="admin-form">
                 <div class="form-group">
-                    <input name="title" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"  placeholder='Title'></textarea>  
+                    <label class="form-field-label" for="name">Title</label>
+                    <input id="name" name="title" class="form-field-default border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"  placeholder='Title'></textarea>  
                     @if ($errors->has('title'))
                         <span class="text-danger">{{ $errors->first('title') }}</span>
                     @endif
-                    <textarea name="description" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"  placeholder='Description'></textarea>  
+                    <label class="form-field-label" for="description">Description</label>
+                    <textarea id="description" name="description" class="form-field-default border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"  placeholder='Description'></textarea>  
                     @if ($errors->has('description'))
                         <span class="text-danger">{{ $errors->first('description') }}</span>
                     @endif
-                    <select id="country" name="country" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white">
+                    <label class="form-field-label" for="country">Country</label>
+                    <select id="country" name="country" class="form-field-default border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white">
                         <option value="EU">EU</option>
                         <option value="Austria">Austria</option>
                         <option value="Belgium">Belgium</option>
@@ -54,8 +57,8 @@
                         <span class="text-danger">{{ $errors->first('country') }}</span>
                     @endif
                     <div class="custom-file">
+                        <label class="form-field-label" for="chooseFile">Select dataset file (.json, .csv, .tsv)</label>
                         <input type="file" name="file" class="custom-file-input" id="chooseFile">
-                        <label class="custom-file-label" for="chooseFile">Select file</label>
                         @if ($errors->has('file'))
                             <span class="text-danger">{{ $errors->first('file') }}</span>
                         @endif
@@ -63,7 +66,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add dataset</button>
+                    <button type="submit" class="btn-default btn-large">Add dataset</button>
                 </div>
                 {{ csrf_field() }}
             </form>

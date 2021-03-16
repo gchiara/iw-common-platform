@@ -165,8 +165,21 @@ nav .nav-link:hover {
 .admin-form textarea,
 .admin-form select {
   border-radius: 2px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.admin-form .form-field-default {
+  background-color: #f4f6f7;
+}
+
+.admin-form .form-field-label {
   margin-bottom: 10px;
   display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0c4475;
+  text-transform: uppercase;
 }
 
 .admin-form .custom-file {

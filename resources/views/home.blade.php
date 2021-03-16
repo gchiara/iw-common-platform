@@ -70,7 +70,7 @@
             <div class="landing-cta-container">
                 <div class="landing-cta-text">
                     <div class="landing-cta-text-inner">
-                        <div class="landing-cta-text-main">Sign up</div>
+                        <div class="landing-cta-text-main">Sign up or Log in</div>
                         <div class="landing-cta-text-secondary">to access our datasets database</div>
                     </div>
                 </div>

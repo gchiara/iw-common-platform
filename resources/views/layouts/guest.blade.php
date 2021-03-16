@@ -7,11 +7,18 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <!-- Icons -->
+        <script src="https://kit.fontawesome.com/663f4a7b53.js" crossorigin="anonymous"></script>
+
         <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700&display=swap" rel="stylesheet">
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/main.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/cookie-consent.css') }}">
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>

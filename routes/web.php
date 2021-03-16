@@ -25,7 +25,7 @@ Route::get('/',[PlatformsController::class, 'index'])->name('home');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/dashboard',[DatasetsController::class, 'index'])->name('dashboard');
-    Route::post('/dashboard',[DatasetsController::class, 'index'])->name('dashboard');
+    Route::post('/dashboard',[DatasetsController::class, 'index']);
     Route::get('/download_dataset/{dataset}', [DatasetsController::class, 'download']);
 });
 

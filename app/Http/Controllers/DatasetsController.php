@@ -91,6 +91,11 @@ class DatasetsController extends Controller
             abort(403);
         }
     	if(isset($_POST['delete'])) {
+            //Delete file if exists
+            $filePath = storage_path() . '/app/public/uploads/' . $dataset->file_path;
+            if(File::exists($filePath)) {
+                File::delete($filePath);
+            }
     		$dataset->delete();
     		return redirect('/dashboard');
     	}
