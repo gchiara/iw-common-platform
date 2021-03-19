@@ -3,6 +3,8 @@
     <h2 class="text-white leading-tight">
         {{ __('Add Dataset') }}
     </h2>
+    <div class="header-description">You can use this form to add a new dataset to the Integrity Watch Data Hub.<br />
+    The uploaded dataset will be stored on the platform and will be visible and downloadable by registered users.</div>
 </x-slot>
 
 <div class="py-12">

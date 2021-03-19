@@ -3,6 +3,7 @@
     <h2 class="text-white leading-tight">
         {{ __('Admin panel') }}
     </h2>
+    <div class="header-description">From this section it's possible to view and manage datasets, platforms shown in the homepage and registered users.</div>
 </x-slot>
 
 <div class="py-12">

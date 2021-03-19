@@ -4,9 +4,7 @@
         Integrity Watch Datasets
     </h2>
     <div class="header-description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor, purus eu sagittis pulvinar, nisi tortor consequat tortor, sit amet fermentum nunc augue non nibh.
-        Pellentesque nec semper tellus. Sed et pellentesque massa, quis vulputate orci. Aliquam tellus lorem, dapibus non leo ut, consequat malesuada tortor.<br />
-        Cras in justo at mi ultricies suscipit nec vitae lorem. Donec id vestibulum mauris. Suspendisse rhoncus libero at nunc vulputate scelerisque. Nulla ultrices aliquet lorem, et pulvinar massa pretium eget. Curabitur vulputate erat lorem. Integer id justo libero. Curabitur ultricies semper metus id pharetra.
+    Welcome to the Integrity Watch Data hub: a central database containing every dataset collected, cleaned, and harmonised for our Integrity Watch platforms. You can sort directly by country, use the search function for specific type of data and directly download the full datasets. The datahub will be regularly updated with new datasets as they are published on their respective Integrity Watch platform. Our aim is to foster further research and better understanding into the use of data to foster political integrity, transparency, and accountability in public institutions. Should you have any questions or would like to share your thoughts, feel free to reach out to our dedicated teams: <a href="mailto:datahbub@transparency.org">datahbub@transparency.org</a>
     </div>
 </x-slot>
 
@@ -46,6 +44,9 @@
                     <a href="/dataset" class="btn-default btn-large">
                         <i class="fas fa-plus btn-icon-medium"></i>Add new Dataset
                     </a>
+                    <a href="/download-datasets-list" class="btn-default btn-large">
+                        <i class="fas fa-download btn-icon-medium"></i>Download list (CSV)
+                    </a>
                     @endif
                 </div>
             </div>
@@ -73,7 +74,7 @@
                         {{$dataset->country}}
                         </td>
                         <td class="text-right p-3 px-5">
-                            <a href="download_dataset/{{$dataset->id}}" class="btn-default mr-1 focus:outline-none focus:shadow-outline">
+                            <a href="download-dataset/{{$dataset->id}}" class="btn-default mr-1 focus:outline-none focus:shadow-outline">
                                 <i class="fas fa-download btn-icon-only"></i>
                             </a>
         

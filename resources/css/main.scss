@@ -117,8 +117,13 @@ nav {
     }
     tbody {
         tr {
+            border: none;
+            background: #fff;
+            &:nth-child(odd) {
+                background: #f7f8f9;
+            }
             &:hover {
-                background: #f4f5f6;
+                background: #f0f1f4;
             }
             td {
 
@@ -128,6 +133,7 @@ nav {
 }
 .data-entry-title {
     font-weight: 600;
+    color: #0c4475;
 }
 .data-entry-description {
     font-size: 13px;
@@ -155,6 +161,9 @@ nav {
         font-size: 13px;
     }
     .user-role {
+        font-size: 13px;
+    }
+    .user-date {
         font-size: 13px;
     }
 }
@@ -206,16 +215,16 @@ nav {
 
 .admin-panel-block {
     border-radius: 5px;
-    background: #ccaa00;
+    background: #d78a08;
     color: #fff;
     font-size: 20px;
     text-align: center;
     padding: 90px 0;
     transition: .4s all;
     &.datasets-admin-block {
-        background: #42b983;
+        background: #d78a08;
         &:hover {
-            background: #32a973;
+            background: #c77a08;
         }
     }
     &.platforms-admin-block {
@@ -225,9 +234,9 @@ nav {
         }
     }
     &.users-admin-block {
-        background: #ff8833;
+        background: #0c4475;
         &:hover {
-            background: #ef7823;
+            background: #0c3465;
         }
     }
     i {
@@ -253,3 +262,21 @@ footer {
 }
 
 //VARIOUS
+
+.bg-iw {
+    background-color: $main-color;
+}
+.auth-logo-container {
+    margin-bottom: 50px;
+    img {
+        width: 400px;
+        max-width: 90%;
+    }
+    .auth-logo-text {
+        color: #d78a08;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 10px;
+    }
+}

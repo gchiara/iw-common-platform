@@ -26,7 +26,7 @@ Route::get('/',[PlatformsController::class, 'index'])->name('home');
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/dashboard',[DatasetsController::class, 'index'])->name('dashboard');
     Route::post('/dashboard',[DatasetsController::class, 'index']);
-    Route::get('/download_dataset/{dataset}', [DatasetsController::class, 'download']);
+    Route::get('/download-dataset/{dataset}', [DatasetsController::class, 'download']);
 });
 
 Route::get('storage/images/{filename}', function ($filename)
@@ -56,8 +56,10 @@ Route::middleware(['App\Http\Middleware\CheckIfAdmin'])->group(function(){
     Route::get('/platform/{platform}', [PlatformsController::class, 'edit']);
     Route::post('/platform/{platform}', [PlatformsController::class, 'update']);
 
-    Route::get('/user_toggle_editor/{user}', [UsersController::class, 'toggleEditor']);
-    Route::post('/user_remove/{user}', [UsersController::class, 'delete']);
+    Route::get('/user-toggle-editor/{user}', [UsersController::class, 'toggleEditor']);
+    Route::post('/user-remove/{user}', [UsersController::class, 'delete']);
+
+    Route::get('/download-users', [UsersController::class, 'download']);
 
 });
 
@@ -67,5 +69,5 @@ Route::middleware(['App\Http\Middleware\CheckIfAdminOrEditor'])->group(function(
     Route::post('/dataset',[DatasetsController::class, 'create']);
     Route::get('/dataset/{dataset}', [DatasetsController::class, 'edit']);
     Route::post('/dataset/{dataset}', [DatasetsController::class, 'update']);
-
+    Route::get('/download-datasets-list', [DatasetsController::class, 'downloadList']);
 });

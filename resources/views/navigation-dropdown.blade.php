@@ -7,7 +7,7 @@
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <!-- <x-jet-application-mark class="block h-9 w-auto" /> -->
-                        <img src="{{ asset('img/ti_eu_logo_white.png') }}" class="nav-logo" />
+                        <img src="{{ asset('img/ti_logo.png') }}" class="nav-logo" />
                     </a>
                 </div>
 
@@ -130,9 +130,9 @@
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
             @if (auth()->user()->isAdmin())
-            <x-jet-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin')">
+            <x-jet-responsive-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin')">
                 {{ __('Admin') }}
-            </x-jet-nav-link>
+            </x-jet-responsive-nav-link>
             @endif
         </div>
 
@@ -144,8 +144,8 @@
                 </div>
 
                 <div class="ml-3">
-                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                    <div class="font-medium text-base text-white">{{ Auth::user()->name }}</div>
+                    <div class="font-medium text-sm text-gray-100">{{ Auth::user()->email }}</div>
                 </div>
             </div>
 

@@ -40,7 +40,7 @@
                                 <i class="fas fa-pen btn-icon-small"></i>Edit
                             </a>
                             <form action="/platform/{{$platform->id}}" class="inline-block">
-                                <button type="submit" name="delete" formmethod="POST" class="btn-default btn-red focus:outline-none focus:shadow-outline">
+                                <button type="submit" name="delete" formmethod="POST" class="btn-default btn-red focus:outline-none focus:shadow-outline" onclick="return confirm('Are you sure?')">
                                     <i class="fas fa-trash btn-icon-small"></i>Delete
                                 </button>
                                 {{ csrf_field() }}

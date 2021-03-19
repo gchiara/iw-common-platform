@@ -48,6 +48,21 @@ class DatasetsController extends Controller
         return response()->download($path, $dataset->file_path, $headers);
     }
 
+    public function downloadList()
+    {
+        $datasets = Dataset::all();
+        $filename = "datasets.csv";
+        $delimiter=",";
+        header('Content-Type: application/csv');
+        header('Content-Disposition: attachment; filename="'.$filename.'";');
+        $f = fopen('php://output', 'w');
+        fputcsv($f, array('title','description','country','date_created','date_updated','downloads','file_name'), $delimiter);
+        foreach ($datasets as $d) {
+            $line = array($d->title,$d->description,$d->country,$d->created_at,$d->updated_at,$d->downloads_count,$d->file_path);
+            fputcsv($f, $line, $delimiter);
+        }
+    }
+
     public function add()
     {
     	return view('add');

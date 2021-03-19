@@ -27,7 +27,7 @@
             <div class="top-nav">
                 <div class="grid grid-cols-2">
                     <div class="top-nav-left">
-                        <img src="{{ asset('img/ti_eu_logo_white.png') }}" class="nav-logo" />
+                        <img src="{{ asset('img/ti_logo.png') }}" class="nav-logo" />
                     </div>
                     <div class="top-nav-right">
                         @if (Route::has('login'))
@@ -49,8 +49,9 @@
             <div class="landing-info-area">
                 <h1>Integrity Watch</h1>
                 <div class="description-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor, purus eu sagittis pulvinar, nisi tortor consequat tortor, sit amet fermentum nunc augue non nibh. Pellentesque nec semper tellus. Sed et pellentesque massa, quis vulputate orci. Aliquam tellus lorem, dapibus non leo ut, consequat malesuada tortor. Quisque consectetur, nunc et tempor suscipit, ligula erat tempus nisi, sit amet condimentum urna sapien in turpis. Pellentesque sodales porttitor ex sed tincidunt. Cras in nulla urna. Quisque nisi risus, mattis id sapien et, cursus congue velit. Proin lacus velit, maximus vitae felis in, mollis aliquet est. Nullam sit amet ligula dolor. Etiam in tellus eget leo dignissim condimentum.</p>
-                    <p>Cras in justo at mi ultricies suscipit nec vitae lorem. Donec id vestibulum mauris. Suspendisse rhoncus libero at nunc vulputate scelerisque. Nulla ultrices aliquet lorem, et pulvinar massa pretium eget. Curabitur vulputate erat lorem. Integer id justo libero. Curabitur ultricies semper metus id pharetra. In ut erat consequat, pretium eros sed, mattis orci.</p>
+                    <p>Integrity Watch is a set of user-friendly online tools that allow citizens, journalists, and civil society to monitor political integrity in their institutions. For this purpose, data on lobby meetings, financial interests of public officials, political finance and public procurement that is often scattered and difficult to access is collected, harmonised, and made easily available.</p> 
+                    <p>The platforms allow you to search, rank and filter the information in an intuitive way. Thereby Integrity Watch contributes to increasing transparency, integrity, and equality of access to decision-making and to monitor for potential conflicts of interest, undue influence or even corruption.</p>
+                    <p>This central hub will provide you with an overview of all existing Integrity Watch platforms deployed across the world. Are you a researcher, civil society activist, journalist or curious about the original datasets powering our Integrity Watch platforms? Register now to join the fight against political corruption and gain access to one of the largest databases on political integrity in Europe!</p> 
                 </div>
                 <div class="landing-info-btn">
                     @if (Route::has('login'))
@@ -71,7 +72,7 @@
                 <div class="landing-cta-text">
                     <div class="landing-cta-text-inner">
                         <div class="landing-cta-text-main">Sign up or Log in</div>
-                        <div class="landing-cta-text-secondary">to access our datasets database</div>
+                        <div class="landing-cta-text-secondary">to access the Integrity Watch datahub!</div>
                     </div>
                 </div>
             </div>

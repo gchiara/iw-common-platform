@@ -115,12 +115,22 @@ nav .nav-link:hover {
   color: #0c4475;
 }
 
+.data-entry-table tbody tr {
+  border: none;
+  background: #fff;
+}
+
+.data-entry-table tbody tr:nth-child(odd) {
+  background: #f7f8f9;
+}
+
 .data-entry-table tbody tr:hover {
-  background: #f4f5f6;
+  background: #f0f1f4;
 }
 
 .data-entry-title {
   font-weight: 600;
+  color: #0c4475;
 }
 
 .data-entry-description {
@@ -154,6 +164,10 @@ nav .nav-link:hover {
 }
 
 .users-list .user-role {
+  font-size: 13px;
+}
+
+.users-list .user-date {
   font-size: 13px;
 }
 
@@ -199,7 +213,7 @@ nav .nav-link:hover {
 
 .admin-panel-block {
   border-radius: 5px;
-  background: #ccaa00;
+  background: #d78a08;
   color: #fff;
   font-size: 20px;
   text-align: center;
@@ -208,11 +222,11 @@ nav .nav-link:hover {
 }
 
 .admin-panel-block.datasets-admin-block {
-  background: #42b983;
+  background: #d78a08;
 }
 
 .admin-panel-block.datasets-admin-block:hover {
-  background: #32a973;
+  background: #c77a08;
 }
 
 .admin-panel-block.platforms-admin-block {
@@ -224,11 +238,11 @@ nav .nav-link:hover {
 }
 
 .admin-panel-block.users-admin-block {
-  background: #ff8833;
+  background: #0c4475;
 }
 
 .admin-panel-block.users-admin-block:hover {
-  background: #ef7823;
+  background: #0c3465;
 }
 
 .admin-panel-block i {
@@ -250,5 +264,26 @@ footer .footer-inner {
 footer .footer-inner a {
   color: #222;
   text-decoration: underline;
+}
+
+.bg-iw {
+  background-color: #0c4475;
+}
+
+.auth-logo-container {
+  margin-bottom: 50px;
+}
+
+.auth-logo-container img {
+  width: 400px;
+  max-width: 90%;
+}
+
+.auth-logo-container .auth-logo-text {
+  color: #d78a08;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10px;
 }
 

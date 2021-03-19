@@ -45,7 +45,7 @@ class PlatformsController extends Controller
         $platform->url = $request->url;
         $platform->order = $request->order;
         $platform->save();
-        return redirect('/'); 
+        return redirect('/platforms-list'); 
     }
 
     public function edit(Platform $platform)
@@ -57,7 +57,7 @@ class PlatformsController extends Controller
     {
     	if(isset($_POST['delete'])) {
     		$platform->delete();
-    		return redirect('/');
+    		return redirect('/platforms-list');
     	}
     	else
     	{
@@ -78,7 +78,7 @@ class PlatformsController extends Controller
             $platform->url = $request->url;
             $platform->order = $request->order;
             $platform->save();
-            return redirect('/'); 
+            return redirect('/platforms-list'); 
     	}    	
     }
 }

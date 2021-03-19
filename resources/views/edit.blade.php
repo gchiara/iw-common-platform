@@ -3,6 +3,7 @@
     <h2 class="text-white leading-tight">
         {{ __('Edit Dataset') }}
     </h2>
+    <div class="header-description">You can use this form to edit the information related to the dataset you selected.</div>
 </x-slot>
 
 <div class="py-12">
