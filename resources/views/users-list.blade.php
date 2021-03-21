@@ -82,6 +82,9 @@
                 @endforeach
                 </tbody>
             </table>
+            <div class="pagination-links-container">
+                {{ $users->links() }}
+            </div>
             
         </div>
     </div>

@@ -13,7 +13,7 @@ body {
 
 //NAV
 
-nav {
+nav.nav-main {
     background-color: $main-color;
     color: #fff;
     .nav-logo {
@@ -168,12 +168,27 @@ nav {
     }
 }
 
+//PAGINATION
+.pagination-links-container {
+    margin-top: 40px;
+}
+.pagination-buttons {
+    .active {
+        span {
+            background: #2a7aae;
+            color: #fff;
+        }
+    }
+}
+
 //FILTERS
 
 .filters-container {
     margin-bottom: 30px;
     button {
-
+        &.active {
+            background: #0c4475;
+        }
     }
 }
 

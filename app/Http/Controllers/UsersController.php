@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use DB;
 
 class UsersController extends Controller
 {
@@ -27,7 +28,9 @@ class UsersController extends Controller
 
     public function manage()
     {
-        $users = User::all();
+        //$users = User::all();
+        $users = User::paginate(20);
+        //$users = DB::table('users')->paginate(1);
         return view('users-list', compact('users'));
     }
 

@@ -14,6 +14,7 @@ class DatasetsController extends Controller
     {
         $countries = [];
         $datasets = Dataset::all();
+        $datasets_num = count($datasets);
         foreach ($datasets as $d) {
             if (!in_array($d->country, $countries)) {
                 array_push($countries, $d->country);
@@ -22,15 +23,16 @@ class DatasetsController extends Controller
         $selected_country = '';
         if($request->method() == 'POST' && $request->filter && $request->country ) {
             $datasets = Dataset::where('country', $request->country)->get();
+            $datasets_num = count($datasets);
             $selected_country = $request->country;
-    	}
-        $datasets_num = count($datasets);
+    	} else {
+            $datasets = Dataset::paginate(10);
+        }
         return view('dashboard', compact('datasets','countries','selected_country', 'datasets_num'));
     }
 
     public function filter()
     {
-        
         $datasets = Dataset::all();
         return view('dashboard', compact('datasets'));
     }

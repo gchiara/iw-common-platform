@@ -14,9 +14,15 @@
             @foreach($countries as $country)
             <form action="/dashboard" class="inline-block">
                 <input type="hidden" name="country" value="{{ $country }}">
-                <button type="submit" name="filter" value="true" formmethod="POST" class="btn-default focus:outline-none focus:shadow-outline">
-                    {{ $country }}
-                </button>
+                @if($selected_country == $country)
+                    <button type="submit" name="filter" value="true" formmethod="POST" class="btn-default active focus:outline-none focus:shadow-outline">
+                        {{ $country }}
+                    </button>
+                @else
+                    <button type="submit" name="filter" value="true" formmethod="POST" class="btn-default focus:outline-none focus:shadow-outline">
+                        {{ $country }}
+                    </button>
+                @endif
                 {{ csrf_field() }}
             </form>
             @endforeach
@@ -89,12 +95,16 @@
                                 {{ csrf_field() }}
                             </form>
                             @endcan
-                            
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
+            @if($selected_country == '')
+            <div class="pagination-links-container">
+                {{ $datasets->links() }}
+            </div>
+            @endif
             
         </div>
     </div>

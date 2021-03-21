@@ -6,16 +6,16 @@ body {
   background-color: #f4f5f7;
 }
 
-nav {
+nav.nav-main {
   background-color: #0c4475;
   color: #fff;
 }
 
-nav .nav-logo {
+nav.nav-main .nav-logo {
   height: 40px;
 }
 
-nav .nav-link {
+nav.nav-main .nav-link {
   align-items: center;
   display: inline-flex;
   font-size: 14px;
@@ -25,8 +25,8 @@ nav .nav-link {
   color: #ccc;
 }
 
-nav .nav-link.active,
-nav .nav-link:hover {
+nav.nav-main .nav-link.active,
+nav.nav-main .nav-link:hover {
   color: #fff;
 }
 
@@ -171,8 +171,21 @@ nav .nav-link:hover {
   font-size: 13px;
 }
 
+.pagination-links-container {
+  margin-top: 40px;
+}
+
+.pagination-buttons .active span {
+  background: #2a7aae;
+  color: #fff;
+}
+
 .filters-container {
   margin-bottom: 30px;
+}
+
+.filters-container button.active {
+  background: #0c4475;
 }
 
 .admin-form input,
