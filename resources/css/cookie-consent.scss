@@ -10,6 +10,10 @@
     font-size: 13px;
     padding-right: 150px;
     box-shadow: 2px -4px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+    @media screen and (max-width: 768px) {
+        font-size: 11px;
+    }
     .cookie-consent__message {
 
     }

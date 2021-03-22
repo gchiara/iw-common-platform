@@ -57,6 +57,7 @@ Route::middleware(['App\Http\Middleware\CheckIfAdmin'])->group(function(){
     Route::post('/platform/{platform}', [PlatformsController::class, 'update']);
 
     Route::get('/user-toggle-editor/{user}', [UsersController::class, 'toggleEditor']);
+    Route::get('/user-toggle-admin/{user}', [UsersController::class, 'toggleAdmin']);
     Route::post('/user-remove/{user}', [UsersController::class, 'delete']);
 
     Route::get('/download-users', [UsersController::class, 'download']);

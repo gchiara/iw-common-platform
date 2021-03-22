@@ -20,7 +20,7 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                     @if (auth()->user()->isAdmin())
-                    <x-jet-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin')">
+                    <x-jet-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin') || request()->routeIs('platforms-list') || request()->routeIs('users-list')">
                         {{ __('Admin') }}
                     </x-jet-nav-link>
                     @endif

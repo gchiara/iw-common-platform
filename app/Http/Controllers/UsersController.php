@@ -42,7 +42,23 @@ class UsersController extends Controller
             $user->is_editor = 1;
         }
         $user->save();
-        $users = User::all();
+        $users = User::paginate(20);
+        return view('users-list', compact('users'));
+    }
+
+    public function toggleAdmin(User $user)
+    {
+        if($user->id == 1) {
+            return view('users-list', compact('users'));
+        }
+        if($user->is_admin) {
+            $user->is_admin = 0;
+        } else {
+            $user->is_admin = 1;
+            $user->is_editor = 0;
+        }
+        $user->save();
+        $users = User::paginate(20);
         return view('users-list', compact('users'));
     }
 
@@ -51,7 +67,7 @@ class UsersController extends Controller
         if(isset($_POST['delete']) && $user->id !== 1) {
     		$user->delete();
     	}
-        $users = User::all();
+        $users = User::paginate(20);
         return view('users-list', compact('users'));
     }
 }

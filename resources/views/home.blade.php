@@ -31,7 +31,7 @@
                     </div>
                     <div class="top-nav-right">
                         @if (Route::has('login'))
-                            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                            <div class="absolute top-0 right-0 px-6 py-4 sm:block">
                                 @auth
                                     <a href="{{ url('/dashboard') }}" class="text-sm text-white">View Datasets</a>
                                 @else
@@ -71,8 +71,13 @@
             <div class="landing-cta-container">
                 <div class="landing-cta-text">
                     <div class="landing-cta-text-inner">
-                        <div class="landing-cta-text-main">Sign up or Log in</div>
-                        <div class="landing-cta-text-secondary">to access the Integrity Watch datahub!</div>
+                        @auth
+                            <div class="landing-cta-text-main">Welcome</div>
+                            <div class="landing-cta-text-secondary">to the Integrity Watch datahub!</div>
+                        @else
+                            <div class="landing-cta-text-main">Sign up or Log in</div>
+                            <div class="landing-cta-text-secondary">to access the Integrity Watch datahub!</div>
+                        @endauth
                     </div>
                 </div>
             </div>
@@ -100,6 +105,7 @@
         <footer>
             <div class="footer-inner">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla libero ipsum, scelerisque efficitur nunc pharetra nec. Pellentesque mattis vestibulum elit ac lobortis. <a href="">Lorem Ipsum.</a>
+                <div>Developed by <a href="http://www.chiaragirardelli.net" target="_blank">Chiara Girardelli</a>.</div>
             </div>            
         </footer>
         @include('cookieConsent::index')

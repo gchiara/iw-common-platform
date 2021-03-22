@@ -17,7 +17,7 @@ nav.nav-main {
     background-color: $main-color;
     color: #fff;
     .nav-logo {
-        height: 40px;
+        max-height: 40px;
     }
     .nav-link {
         align-items: center;
@@ -37,7 +37,9 @@ nav.nav-main {
 //HEADERS
 
 .page-header {
-    background-color: $main-color-lighter;
+    //background-color: $main-color-lighter;
+    background-image: url('/img/header-bg.jpg');
+    background-size: cover;
     h2 {
         margin-top: 10px;
         font-size: 25px;
@@ -49,6 +51,9 @@ nav.nav-main {
     color: #fff;
     font-size: 13px;
     line-height: 150%;
+    @media screen and (max-width: 768px) {
+        font-size: 12px;
+    }
 }
 
 //BUTTONS
@@ -73,6 +78,10 @@ nav.nav-main {
     &.btn-large {
         font-size: 16px;
         padding: 5px 15px;
+        @media screen and (max-width: 768px) {
+            font-size: 14px;
+            padding: 5px 15px;
+        }
     }
 }
 .btn-icon-small {
@@ -94,11 +103,26 @@ nav.nav-main {
 
 //TABLES
 
+.list-top-area {
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+}
 .list-title {
     font-size: 24px;
     text-align: left;
     display: block;
     color: #2c6495;
+    @media screen and (max-width: 768px) {
+        flex: none;
+    }
+}
+.list-actions-container {
+    @media screen and (max-width: 768px) {
+        flex: none;
+        text-align: left;
+        margin-bottom: 20px;
+    }
 }
 .list-count-text {
     font-size: 13px;
@@ -107,6 +131,9 @@ nav.nav-main {
     color: #000;
 }
 .data-entry-table {
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
     margin-top: 30px;
     thead {
         tr {
@@ -139,6 +166,11 @@ nav.nav-main {
     font-size: 13px;
     margin-bottom: 10px;
 }
+.data-entry-url {
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
 .data-entry-downloads {
     font-size: 13px;
 }
@@ -148,7 +180,6 @@ nav.nav-main {
 .actions-column {
     min-width: 300px;
 }
-
 .users-list {
     .user-name {
         font-size: 13px;
@@ -165,6 +196,59 @@ nav.nav-main {
     }
     .user-date {
         font-size: 13px;
+    }
+    td, th {
+        &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+            @media screen and (max-width: 1210px) {
+                display: none;
+            }
+        }
+    }
+    .btn-default {
+        margin: 0 5px 5px 0;
+    }
+}
+.data-entry-boxes-container {
+    display: none;
+    margin: 0 -5px;
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+    .data-box {
+        background: #e2e6ec;
+        margin: 5px;
+        position: relative;
+        .data-box-inner {
+            padding: 15px 15px 60px 15px;
+            .data-entry-title {
+                font-size: 18px;
+            }
+            .data-entry-country {
+                font-size: 13px;
+            }
+            .data-entry-description {
+                margin-top: 15px;
+            }
+            .data-entry-downloads {
+
+            }
+            .data-entry-date {
+
+            }
+            .user-org {
+                font-size: 13px;
+            }
+            .user-role {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+            .data-box-actions {
+                position: absolute;
+                bottom: 15px;
+                left: 15px;
+                right: 15px;
+            }
+        }
     }
 }
 
@@ -185,6 +269,9 @@ nav.nav-main {
 
 .filters-container {
     margin-bottom: 30px;
+    @media screen and (max-width: 639px) {
+        padding: 0 20px;
+    }
     button {
         &.active {
             background: #0c4475;
@@ -282,10 +369,15 @@ footer {
     background-color: $main-color;
 }
 .auth-logo-container {
-    margin-bottom: 50px;
+    text-align: center;
+    margin: 30px auto 50px auto;
+    @media screen and (max-width: 768px) {
+        max-width: 90%;
+    }
     img {
         width: 400px;
-        max-width: 90%;
+        max-width: 80%;
+        margin: auto;
     }
     .auth-logo-text {
         color: #d78a08;
@@ -293,5 +385,8 @@ footer {
         text-align: center;
         font-size: 30px;
         margin-top: 10px;
+        @media screen and (max-width: 768px) {
+            font-size: 22px;
+        }
     }
 }

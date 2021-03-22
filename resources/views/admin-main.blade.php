@@ -9,15 +9,15 @@
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-sm p-5">
-            <div class="flex">
-                <div class="flex-auto text-2xl mb-4">Admin panel</div>
-                <div class="flex-auto text-right mt-2">
+            <div class="flex list-top-area mb-4">
+                <div class="list-title flex-auto text-2xl mb-4">Admin panel</div>
+                <div class="list-actions-container flex-auto text-right">
                     <a href="/dataset" class="btn-default btn-large">
                         <i class="fas fa-plus btn-icon-medium"></i>Add new Dataset
                     </a>
                 </div>
             </div>
-            <div class="grid grid-cols-3 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4">
                 <div>
                     <a href="/dashboard">
                         <div class="admin-panel-block datasets-admin-block">

@@ -10,7 +10,7 @@ body {
 }
 
 .nav-logo {
-  height: 50px;
+  max-height: 50px;
 }
 
 .top-nav .top-nav-left {
@@ -33,6 +33,7 @@ body {
 .landing-info-area h1 {
   font-size: 40px;
   font-weight: 300;
+  line-height: 120%;
 }
 
 .landing-info-area .description-text {
@@ -80,10 +81,22 @@ body {
   font-weight: 600;
 }
 
+@media screen and (max-width: 390px) {
+  .landing-cta-container .landing-cta-text-main {
+    font-size: 24px;
+  }
+}
+
 .landing-cta-container .landing-cta-text-secondary {
   font-size: 24px;
   color: #fff;
   font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .landing-cta-container .landing-cta-text-secondary {
+    font-size: 16px;
+  }
 }
 
 .landing-grid-container {

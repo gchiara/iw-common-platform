@@ -12,7 +12,7 @@ nav.nav-main {
 }
 
 nav.nav-main .nav-logo {
-  height: 40px;
+  max-height: 40px;
 }
 
 nav.nav-main .nav-link {
@@ -31,7 +31,8 @@ nav.nav-main .nav-link:hover {
 }
 
 .page-header {
-  background-color: #2c6495;
+  background-image: url("/img/header-bg.jpg");
+  background-size: cover;
 }
 
 .page-header h2 {
@@ -45,6 +46,12 @@ nav.nav-main .nav-link:hover {
   color: #fff;
   font-size: 13px;
   line-height: 150%;
+}
+
+@media screen and (max-width: 768px) {
+  .header-description {
+    font-size: 12px;
+  }
 }
 
 .btn-default {
@@ -74,6 +81,13 @@ nav.nav-main .nav-link:hover {
   padding: 5px 15px;
 }
 
+@media screen and (max-width: 768px) {
+  .btn-default.btn-large {
+    font-size: 14px;
+    padding: 5px 15px;
+  }
+}
+
 .btn-icon-small {
   vertical-align: middle;
   margin-right: 10px;
@@ -93,11 +107,31 @@ nav.nav-main .nav-link:hover {
   top: -1px;
 }
 
+@media screen and (max-width: 768px) {
+  .list-top-area {
+    display: block;
+  }
+}
+
 .list-title {
   font-size: 24px;
   text-align: left;
   display: block;
   color: #2c6495;
+}
+
+@media screen and (max-width: 768px) {
+  .list-title {
+    flex: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .list-actions-container {
+    flex: none;
+    text-align: left;
+    margin-bottom: 20px;
+  }
 }
 
 .list-count-text {
@@ -109,6 +143,12 @@ nav.nav-main .nav-link:hover {
 
 .data-entry-table {
   margin-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .data-entry-table {
+    display: none;
+  }
 }
 
 .data-entry-table thead tr th {
@@ -136,6 +176,12 @@ nav.nav-main .nav-link:hover {
 .data-entry-description {
   font-size: 13px;
   margin-bottom: 10px;
+}
+
+.data-entry-url {
+  font-size: 13px;
+  margin-bottom: 10px;
+  font-style: italic;
 }
 
 .data-entry-downloads {
@@ -171,6 +217,70 @@ nav.nav-main .nav-link:hover {
   font-size: 13px;
 }
 
+@media screen and (max-width: 1210px) {
+  .users-list td:nth-child(2),
+  .users-list td:nth-child(3),
+  .users-list td:nth-child(4),
+  .users-list th:nth-child(2),
+  .users-list th:nth-child(3),
+  .users-list th:nth-child(4) {
+    display: none;
+  }
+}
+
+.users-list .btn-default {
+  margin: 0 5px 5px 0;
+}
+
+.data-entry-boxes-container {
+  display: none;
+  margin: 0 -5px;
+}
+
+@media screen and (max-width: 768px) {
+  .data-entry-boxes-container {
+    display: block;
+  }
+}
+
+.data-entry-boxes-container .data-box {
+  background: #e2e6ec;
+  margin: 5px;
+  position: relative;
+}
+
+.data-entry-boxes-container .data-box .data-box-inner {
+  padding: 15px 15px 60px 15px;
+}
+
+.data-entry-boxes-container .data-box .data-box-inner .data-entry-title {
+  font-size: 18px;
+}
+
+.data-entry-boxes-container .data-box .data-box-inner .data-entry-country {
+  font-size: 13px;
+}
+
+.data-entry-boxes-container .data-box .data-box-inner .data-entry-description {
+  margin-top: 15px;
+}
+
+.data-entry-boxes-container .data-box .data-box-inner .user-org {
+  font-size: 13px;
+}
+
+.data-entry-boxes-container .data-box .data-box-inner .user-role {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.data-entry-boxes-container .data-box .data-box-inner .data-box-actions {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+}
+
 .pagination-links-container {
   margin-top: 40px;
 }
@@ -182,6 +292,12 @@ nav.nav-main .nav-link:hover {
 
 .filters-container {
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 639px) {
+  .filters-container {
+    padding: 0 20px;
+  }
 }
 
 .filters-container button.active {
@@ -284,12 +400,20 @@ footer .footer-inner a {
 }
 
 .auth-logo-container {
-  margin-bottom: 50px;
+  text-align: center;
+  margin: 30px auto 50px auto;
+}
+
+@media screen and (max-width: 768px) {
+  .auth-logo-container {
+    max-width: 90%;
+  }
 }
 
 .auth-logo-container img {
   width: 400px;
-  max-width: 90%;
+  max-width: 80%;
+  margin: auto;
 }
 
 .auth-logo-container .auth-logo-text {
@@ -298,5 +422,11 @@ footer .footer-inner a {
   text-align: center;
   font-size: 30px;
   margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .auth-logo-container .auth-logo-text {
+    font-size: 22px;
+  }
 }
 
