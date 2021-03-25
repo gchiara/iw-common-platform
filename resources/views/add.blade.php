@@ -25,35 +25,9 @@
                     @endif
                     <label class="form-field-label" for="country">Country</label>
                     <select id="country" name="country" class="form-field-default border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white">
-                        <option value="EU">EU</option>
-                        <option value="Austria">Austria</option>
-                        <option value="Belgium">Belgium</option>
-                        <option value="Bulgaria">Bulgaria</option>
-                        <option value="Croatia">Croatia</option>
-                        <option value="Cyprus">Cyprus</option>
-                        <option value="Czech Republic">Czech Republic</option>
-                        <option value="Denmark">Denmark</option>
-                        <option value="Estonia">Estonia</option>
-                        <option value="Finland">Finland</option>
-                        <option value="France">France</option>
-                        <option value="Germany">Germany</option>
-                        <option value="Greece">Greece</option>
-                        <option value="Hungary">Hungary</option>
-                        <option value="Ireland">Ireland</option>
-                        <option value="Italy">Italy</option>
-                        <option value="Latvia">Latvia</option>
-                        <option value="Lithuania">Lithuania</option>
-                        <option value="Luxembourg">Luxembourg</option>
-                        <option value="Malta">Malta</option>
-                        <option value="Netherlands">Netherlands</option>
-                        <option value="Poland">Poland</option>
-                        <option value="Portugal">Portugal</option>
-                        <option value="Romania">Romania</option>
-                        <option value="Slovakia">Slovakia</option>
-                        <option value="Slovenia">Slovenia</option>
-                        <option value="Spain">Spain</option>
-                        <option value="Sweden">Sweden</option>
-                        <option value="United Kingdom">United Kingdom</option>
+                        @foreach($selectableCountries as $country)
+                            <option value="{{$country}}">{{$country}}</option>
+                        @endforeach
                     </select>
                     @if ($errors->has('country'))
                         <span class="text-danger">{{ $errors->first('country') }}</span>

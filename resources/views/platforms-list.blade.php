@@ -3,6 +3,10 @@
     <h2 class="text-white leading-tight">
         {{ __('Platforms') }}
     </h2>
+    <div class="header-description">From this section it's possible to view and manage the platforms shown in the homepage.</div>
+    @if (auth()->user()->isAdmin() and auth()->user()->email == "girardelli.chiara@gmail.com" or auth()->user()->email == "rkergueno@transparency.org")
+    <div class="header-description"><i>“These are out revolutions, 13 platforms long.”</i></div>
+    @endif
 </x-slot>
 
 <div class="py-12">

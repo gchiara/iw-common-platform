@@ -7,9 +7,11 @@ use App\Models\Dataset;
 use File;
 use Log;
 use Gate;
+use App\Models\User;
 
 class DatasetsController extends Controller
 {
+
     public function index(Request $request)
     {
         $countries = [];
@@ -67,7 +69,8 @@ class DatasetsController extends Controller
 
     public function add()
     {
-    	return view('add');
+        $selectableCountries = ["EU", "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Poland", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Sweden", "United Kingdom", "Other"];
+    	return view('add', compact('selectableCountries'));
     }
 
     public function create(Request $request)
@@ -99,7 +102,9 @@ class DatasetsController extends Controller
         if (!Gate::allows('edit-dataset', $dataset)) {
             abort(403);
         }
-    	return view('edit', compact('dataset'));           	
+        $selectableCountries = ["EU", "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Poland", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Sweden", "United Kingdom", "Other"];
+        $editors = User::where('is_editor', 1)->orWhere('is_admin', 1)->get();
+    	return view('edit', compact('dataset','editors','selectableCountries'));           	
     }
 
     public function update(Request $request, Dataset $dataset)
@@ -126,6 +131,9 @@ class DatasetsController extends Controller
             $dataset->title = $request->title;
             $dataset->description = $request->description;
             $dataset->country = $request->country;
+            if($request->owner) {
+                $dataset->user_id = $request->owner;
+            }
 	    	$dataset->save();
 	    	return redirect('/dashboard'); 
     	}    	

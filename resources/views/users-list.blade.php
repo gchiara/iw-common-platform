@@ -3,6 +3,7 @@
     <h2 class="text-white leading-tight">
         {{ __('Users') }}
     </h2>
+    <div class="header-description">From this section it's possible to view and manage the registered users.</div>
 </x-slot>
 
 <div class="py-12">
