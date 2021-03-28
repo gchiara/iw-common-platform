@@ -430,3 +430,7 @@ footer .footer-inner a {
   }
 }
 
+.inline {
+  display: inline !important;
+}
+

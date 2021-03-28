@@ -4,7 +4,7 @@
         Integrity Watch Data Hub
     </h2>
     <div class="header-description">
-    Welcome to the Integrity Watch Data hub: a central database containing every dataset collected, cleaned, and harmonised for our Integrity Watch platforms. You can sort directly by country, use the search function for specific type of data and directly download the full datasets. The datahub will be regularly updated with new datasets as they are published on their respective Integrity Watch platform. Our aim is to foster further research and better understanding into the use of data to foster political integrity, transparency, and accountability in public institutions. Should you have any questions or would like to share your thoughts, feel free to reach out to our dedicated teams: <a href="mailto:datahbub@transparency.org">datahbub@transparency.org</a>
+    Welcome to the Integrity Watch Data hub: a central database containing every dataset collected, cleaned, and harmonised for our Integrity Watch platforms. You can sort directly by country, use the search function for specific type of data and directly download the full datasets. The datahub will be regularly updated with new datasets as they are published on their respective Integrity Watch platform. Our aim is to foster further research and better understanding into the use of data to foster political integrity, transparency, and accountability in public institutions. Should you have any questions or would like to share your thoughts, feel free to reach out to our dedicated teams: <a href="mailto:datahub@transparency.org">datahub@transparency.org</a>
     </div>
 </x-slot>
 

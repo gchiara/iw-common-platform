@@ -23,10 +23,10 @@
             <table class="data-entry-table users-list w-full text-md rounded mb-4">
                 <thead>
                 <tr class="border-b">
-                    <th class="text-left p-3 px-5">Name</th>
-                    <th class="text-left p-3 px-5">Email</th>
+                    <th class="text-left p-3 px-5">Name & Email</th>
                     <th class="text-left p-3 px-5">Organization</th>
                     <th class="text-left p-3 px-5">Registration</th>
+                    <th class="text-left p-3 px-5">Contact consent</th>
                     <th class="text-left p-3 px-5">Permissions</th>
                     <th class="actions-column text-right p-3 px-5">Actions</th>
                     <th></th>
@@ -37,8 +37,6 @@
                     <tr class="border-b">
                         <td class="p-3 px-5">
                             <div class="user-name">{{$user->name}}</div>
-                        </td>
-                        <td class="p-3 px-5">
                             <div class="user-email">{{$user->email}}</div>
                         </td>
                         <td class="p-3 px-5">
@@ -47,6 +45,13 @@
                         </td>
                         <td class="p-3 px-5">
                             <div class="user-date">{{$user->created_at}}</div>
+                        </td>
+                        <td class="p-3 px-5">
+                            @if ($user->contact_consent)
+                            <div class="user-role">Yes</div>
+                            @else
+                            <div class="user-role">No</div>
+                            @endif
                         </td>
                         <td class="p-3 px-5">
                             <div class="user-role">

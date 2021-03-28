@@ -81,9 +81,7 @@ class DatasetsController extends Controller
             'country' => 'required',
             'file.*' => 'required|mimes:csv,txt,text/csv,application/json,application/xml,text/xml,text/plain|max:102400'
         ]);
-
         $dataset = new Dataset();
-
         if($request->file()) {
             $fileName = time().'_'.$request->file->getClientOriginalName();
             $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
@@ -127,12 +125,24 @@ class DatasetsController extends Controller
                 'title' => 'required',
                 'description' => 'required',
                 'country' => 'required',
+                'file.*' => 'mimes:csv,txt,text/csv,application/json,application/xml,text/xml,text/plain|max:102400'
             ]);
             $dataset->title = $request->title;
             $dataset->description = $request->description;
             $dataset->country = $request->country;
             if($request->owner) {
                 $dataset->user_id = $request->owner;
+            }
+            if($request->file()) {
+                //Delete old file
+                $filePathOld = storage_path() . '/app/public/uploads/' . $dataset->file_path;
+                if(File::exists($filePathOld)) {
+                    File::delete($filePathOld);
+                }
+                //Save new file
+                $fileName = time().'_'.$request->file->getClientOriginalName();
+                $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
+                $dataset->file_path = $fileName;
             }
 	    	$dataset->save();
 	    	return redirect('/dashboard'); 

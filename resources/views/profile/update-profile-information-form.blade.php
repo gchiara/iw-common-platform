@@ -65,6 +65,35 @@
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
         </div>
+
+        
+        <!-- Datahub Custom Fields -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="org_category" value="{{ __('Which sector do you work in?') }}" />
+            <select id="org_category" name="org_category" wire:model.defer="state.org_category"  class="bg-white rounded border border-gray-300 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white">
+                <option value="">Please select an option ...</option>
+                <option value="Journalism">Journalism</option>
+                <option value="Academia">Academia</option>
+                <option value="Civil Society">Civil Society</option>
+                <option value="Company">Company</option>
+                <option value="Public Institution">Public Institution</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="org_name" value="{{ __('Please state the name of your organisation / institution') }}" />
+            <x-jet-input id="org_name" class="block mt-1 w-full" type="text" name="org_name" wire:model.defer="state.org_name" />
+        </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="" value="{{ __('I consent to being contacted by Transparency International') }}" class="mb-1" />
+            <input type="radio" id="contact_consent_1" name="contact_consent" value="1" wire:model.defer="state.contact_consent">
+            <x-jet-label for="contact_consent_1" value="{{ __('Yes') }}" class="inline mr-2" />
+            <input type="radio" id="contact_consent_0" name="contact_consent" value="0" wire:model.defer="state.contact_consent">
+            <x-jet-label for="contact_consent_0" value="{{ __('No') }}" class="inline" />
+        </div>
+
     </x-slot>
 
     <x-slot name="actions">

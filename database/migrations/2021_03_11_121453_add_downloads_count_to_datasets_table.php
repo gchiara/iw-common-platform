@@ -26,7 +26,7 @@ class AddDownloadsCountToDatasetsTable extends Migration
     public function down()
     {
         Schema::table('datasets', function (Blueprint $table) {
-            //
+            $table->dropColumn('downloads_count');
         });
     }
 }

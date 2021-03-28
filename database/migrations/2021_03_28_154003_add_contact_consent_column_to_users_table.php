@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddProfessionFieldsToUsersTable extends Migration
+class AddContactConsentColumnToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,7 @@ class AddProfessionFieldsToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('org_category')->nullable();
-            $table->string('org_name')->nullable();
+            $table->boolean('contact_consent')->default(0);
         });
     }
 
@@ -27,7 +26,7 @@ class AddProfessionFieldsToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('org_category','org_name');
+            $table->dropColumn('contact_consent');
         });
     }
 }

@@ -44,7 +44,7 @@
             <!-- Footer -->
             <footer>
                 <div class="footer-inner max-w-7xl mx-auto">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla libero ipsum, scelerisque efficitur nunc pharetra nec. Pellentesque mattis vestibulum elit ac lobortis. <a href="">Lorem Ipsum.</a>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla libero ipsum, scelerisque efficitur nunc pharetra nec. Pellentesque mattis vestibulum elit ac lobortis. <a href="https://integritywatch.eu/privacy-policy.pdf" target="_blank">Privacy policy</a>
                     <div>Developed by <a href="http://www.chiaragirardelli.net" target="_blank">Chiara Girardelli</a>.</div>
                 </div>
             </footer>

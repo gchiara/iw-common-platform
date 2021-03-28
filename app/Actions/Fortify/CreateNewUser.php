@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
+use Log;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -26,13 +27,17 @@ class CreateNewUser implements CreatesNewUsers
             'org_name' => ['string', 'max:255', 'nullable'],
             'org_category' => ['required', 'string', 'max:255'],
         ])->validate();
-
+        $contactConsent = 0;
+        if(isset($input['contact_consent'])) {
+            $contactConsent = 1;
+        }
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
             'org_name' => $input['org_name'],
             'org_category' => $input['org_category'],
+            'contact_consent' => $contactConsent
         ]);
     }
 }

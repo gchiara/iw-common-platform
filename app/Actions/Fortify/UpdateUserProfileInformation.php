@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
+use Log;
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 {
@@ -22,10 +23,19 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'photo' => ['nullable', 'image', 'max:1024'],
+            'org_name' => ['string', 'max:255', 'nullable'],
+            'org_category' => ['required', 'string', 'max:255'],
         ])->validateWithBag('updateProfileInformation');
+
+        Log::debug($input);
 
         if (isset($input['photo'])) {
             $user->updateProfilePhoto($input['photo']);
+        }
+
+        $contactConsent = 0;
+        if(isset($input['contact_consent'])) {
+            $contactConsent = 1;
         }
 
         if ($input['email'] !== $user->email &&
@@ -35,6 +45,9 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->forceFill([
                 'name' => $input['name'],
                 'email' => $input['email'],
+                'org_category' => $input['org_category'],
+                'org_name' => $input['org_name'],
+                'contact_consent' => $input['contact_consent'],
             ])->save();
         }
     }

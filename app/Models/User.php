@@ -29,7 +29,8 @@ class User extends Authenticatable
         'email',
         'password',
         'org_name',
-        'org_category'
+        'org_category',
+        'contact_consent',
     ];
 
     /**

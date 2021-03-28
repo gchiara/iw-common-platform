@@ -47,6 +47,11 @@
                 <x-jet-input id="org_name" class="block mt-1 w-full" type="text" name="org_name" :value="old('org_name')" />
             </div>
 
+            <div class="mt-4">
+                <input type="checkbox" name="contact_consent" id="contact_consent">
+                <x-jet-label for="contact_consent" value="{{ __('I consent to being contacted by Transparency International') }}" class="inline" />
+            </div>
+
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}

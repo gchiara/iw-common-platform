@@ -10,7 +10,7 @@
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-sm p-5">
         
-            <form method="POST" action="/dataset/{{ $dataset->id }}" class="admin-form">
+            <form method="POST" action="/dataset/{{ $dataset->id }}" enctype="multipart/form-data" class="admin-form">
                 <div class="form-group">
                     <label class="form-field-label" for="name">Title</label>
                     <input name="title" id="name" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"  placeholder='Title' value="{{ $dataset->title }}" />  
@@ -39,6 +39,13 @@
                         @endforeach
                     </select>
                     @endif
+                    <div class="custom-file">
+                        <label class="form-field-label" for="chooseFile">Select new dataset file (.json, .csv, .tsv)</label>
+                        <input type="file" name="file" class="custom-file-input" id="chooseFile">
+                        @if ($errors->has('file'))
+                            <span class="text-danger">{{ $errors->first('file') }}</span>
+                        @endif
+                    </div>
                 </div>
 
                 <div class="form-group">
