@@ -79,11 +79,13 @@
                 <option value="Public Institution">Public Institution</option>
                 <option value="Other">Other</option>
             </select>
+            <x-jet-input-error for="org_category" class="mt-2" />
         </div>
 
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="org_name" value="{{ __('Please state the name of your organisation / institution') }}" />
             <x-jet-input id="org_name" class="block mt-1 w-full" type="text" name="org_name" wire:model.defer="state.org_name" />
+            <x-jet-input-error for="org_name" class="mt-2" />
         </div>
 
         <div class="col-span-6 sm:col-span-4">

@@ -16,12 +16,12 @@ class UsersController extends Controller
         header('Content-Type: application/csv');
         header('Content-Disposition: attachment; filename="'.$filename.'";');
         $f = fopen('php://output', 'w');
-        fputcsv($f, array('name','email','organization','category','platform_role'), $delimiter);
+        fputcsv($f, array('name','email','organization','category','platform_role','contact_consent'), $delimiter);
         foreach ($users as $user) {
             $role = "user";
             if($user->is_admin) { $role = "admin"; }
             else if($user->is_editor) { $role = "editor"; }
-            $line = array($user->name,$user->email,$user->org_name,$user->org_category,$role);
+            $line = array($user->name,$user->email,$user->org_name,$user->org_category,$role,$user->contact_consent);
             fputcsv($f, $line, $delimiter);
         }
     }
