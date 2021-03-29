@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <!-- Meta -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta property="og:url" content="https://data.integritywatch.eu" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Integrity Watch Data Hub" />
+        <meta property="og:description" content="" />
+        <meta property="og:image" content="https://data.integritywatch.eu/img/thumbnail.jpg" />
 
         <title>{{ config('app.name', 'Integrity Watch Data Hub') }}</title>
 
