@@ -89,7 +89,7 @@
         </div>
 
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="" value="{{ __('I consent to being contacted by Transparency International') }}" class="mb-1" />
+            <x-jet-label for="" value="{{ __('Would you like to stay informed about future updates, webinars and advocacy activities related to our Integrity Watch platforms?') }}" class="mb-1" />
             <input type="radio" id="contact_consent_1" name="contact_consent" value="1" wire:model.defer="state.contact_consent">
             <x-jet-label for="contact_consent_1" value="{{ __('Yes') }}" class="inline mr-2" />
             <input type="radio" id="contact_consent_0" name="contact_consent" value="0" wire:model.defer="state.contact_consent">

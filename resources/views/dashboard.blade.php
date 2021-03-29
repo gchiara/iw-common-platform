@@ -6,6 +6,9 @@
     <div class="header-description">
     Welcome to the Integrity Watch Data hub: a central database containing every dataset collected, cleaned, and harmonised for our Integrity Watch platforms. You can sort directly by country, use the search function for specific type of data and directly download the full datasets. The datahub will be regularly updated with new datasets as they are published on their respective Integrity Watch platform. Our aim is to foster further research and better understanding into the use of data to foster political integrity, transparency, and accountability in public institutions. Should you have any questions or would like to share your thoughts, feel free to reach out to our dedicated teams: <a href="mailto:datahub@transparency.org">datahub@transparency.org</a>
     </div>
+    <div class="header-disclaimer">
+    <strong>Disclaimer:</strong> all information and data used by Integrity Watch platforms are gathered from publicly available sources from institutional websites. Datasets may have been cleaned and harmonised for the purpose of well-functioning of the platforms. Transparency International and association national chapters bear no responsibility for the accuracy of the original data. Please consult the “about” sections of each Integrity Watch platform for more information on datasets provided here. The complete list of platforms is available on the homepage of Integrity Watch Data Hub.
+    </div>
 </x-slot>
 
 <div class="py-12">

@@ -49,10 +49,11 @@
 
             <div class="mt-4">
                 <input type="checkbox" name="contact_consent" id="contact_consent">
-                <x-jet-label for="contact_consent" value="{{ __('I consent to being contacted by Transparency International') }}" class="inline" />
+                <x-jet-label for="contact_consent" value="{{ __('Please tick this consent box if you would like to stay informed about future updates, webinars and advocacy activities related to our Integrity Watch platforms.') }}" class="inline" />
+                <div class="font-medium text-sm text-gray-700"><a href="https://integritywatch.eu/privacy-policy.pdf" target="_blank">You can review our privacy policy here</a></div>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex items-center justify-end mt-6">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>

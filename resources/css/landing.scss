@@ -182,4 +182,20 @@ footer {
             text-decoration: underline;
         }
     }
+    .footer-eu-funding {
+        margin-top: 30px;
+        text-align: center;
+        img {
+            display: block;
+            height: 60px;
+            width: auto;
+            margin: 0 auto;
+        }
+        .text {
+            display: block;
+            margin-top: 10px;
+            font-family: Arial;
+            font-size: 13px;
+        }
+    }
 }

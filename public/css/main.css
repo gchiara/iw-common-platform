@@ -41,7 +41,8 @@ nav.nav-main .nav-link:hover {
   font-weight: 300;
 }
 
-.header-description {
+.header-description,
+.header-disclaimer {
   margin: 20px 0;
   color: #fff;
   font-size: 13px;
@@ -49,7 +50,8 @@ nav.nav-main .nav-link:hover {
 }
 
 @media screen and (max-width: 768px) {
-  .header-description {
+  .header-description,
+  .header-disclaimer {
     font-size: 12px;
   }
 }
@@ -382,6 +384,7 @@ nav.nav-main .nav-link:hover {
 
 footer {
   background: #e3e7ef;
+  text-align: center;
 }
 
 footer .footer-inner {
@@ -393,6 +396,25 @@ footer .footer-inner {
 footer .footer-inner a {
   color: #222;
   text-decoration: underline;
+}
+
+footer .footer-eu-funding {
+  margin-top: 30px;
+  text-align: center;
+}
+
+footer .footer-eu-funding img {
+  display: block;
+  height: 60px;
+  width: auto;
+  margin: 0 auto;
+}
+
+footer .footer-eu-funding .text {
+  display: block;
+  margin-top: 10px;
+  font-family: Arial;
+  font-size: 13px;
 }
 
 .bg-iw {

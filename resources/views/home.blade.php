@@ -104,8 +104,12 @@
 
         <footer>
             <div class="footer-inner">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla libero ipsum, scelerisque efficitur nunc pharetra nec. Pellentesque mattis vestibulum elit ac lobortis. <a href="">Lorem Ipsum.</a>
-                <div>Developed by <a href="http://www.chiaragirardelli.net" target="_blank">Chiara Girardelli</a>.</div>
+                <a href="https://integritywatch.eu/privacy-policy.pdf" target="_blank">Privacy policy</a> | For any question, please contact: <a href="mailto:datahub@transparency.org">datahub@transparency.org</a><br />
+                <div>Platform developed by <a href="http://www.chiaragirardelli.net" target="_blank">Chiara Girardelli</a> and Transparency International EU</div>
+                <div class="footer-eu-funding">
+                    <img src="img/flag_yellow_low.jpg" />
+                    <div class="text">This online platform was funded by the European Union’s Internal Security Fund – Police</div>
+                </div>
             </div>            
         </footer>
         @include('cookieConsent::index')
