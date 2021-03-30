@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XFYX71290M"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XFYX71290M');
+        </script>
         <!-- Meta -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:url" content="https://data.integritywatch.eu" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Integrity Watch Data Hub" />
-        <meta property="og:description" content="The Integrity Watch datahub is one of the largest databases on political integrity in Europe. Gain access to over 30 datasets, collected from 8 countries and 2 EU institutions on lobbying, political finance and provides an assets and interests declarations." />
+        <meta property="og:description" content="The Integrity Watch Data Hub is one of the largest databases on political integrity in Europe. Gain access to over 30 datasets, collected from 8 countries and 2 EU institutions on lobbying, political finance and provides an assets and interests declarations." />
         <meta property="og:image" content="https://data.integritywatch.eu/img/thumbnail.jpg" />
 
         <title>Integrity Watch Data Hub</title>
@@ -113,7 +121,7 @@
 
         <footer>
             <div class="footer-inner">
-                <a href="https://integritywatch.eu/privacy-policy.pdf" target="_blank">Privacy policy</a> | For any question, please contact: <a href="mailto:datahub@transparency.org">datahub@transparency.org</a><br />
+                <a href="https://integritywatch.eu/privacy-policy.pdf" target="_blank">Privacy policy</a> | For any question, please contact: <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a><br />
                 <div>Platform developed by <a href="http://www.chiaragirardelli.net" target="_blank">Chiara Girardelli</a> and Transparency International EU</div>
                 <div class="footer-eu-funding">
                     <img src="img/flag_yellow_low.jpg" />
