@@ -27,8 +27,6 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'org_category' => ['required', 'string', 'max:255'],
         ])->validateWithBag('updateProfileInformation');
 
-        Log::debug($input);
-
         if (isset($input['photo'])) {
             $user->updateProfilePhoto($input['photo']);
         }

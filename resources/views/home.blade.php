@@ -7,10 +7,13 @@
         <meta property="og:url" content="https://data.integritywatch.eu" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Integrity Watch Data Hub" />
-        <meta property="og:description" content="" />
+        <meta property="og:description" content="The Integrity Watch datahub is one of the largest databases on political integrity in Europe. Gain access to over 30 datasets, collected from 8 countries and 2 EU institutions on lobbying, political finance and provides an assets and interests declarations." />
         <meta property="og:image" content="https://data.integritywatch.eu/img/thumbnail.jpg" />
 
         <title>Integrity Watch Data Hub</title>
+
+        <!-- Favicon -->
+        <link rel='shortcut icon' type='image/x-icon' href='/img/favicon.ico' />
 
         <!-- Icons -->
         <script src="https://kit.fontawesome.com/663f4a7b53.js" crossorigin="anonymous"></script>
