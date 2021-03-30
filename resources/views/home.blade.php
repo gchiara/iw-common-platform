@@ -121,6 +121,7 @@
 
         <footer>
             <div class="footer-inner">
+                Neither the European Union institutions and bodies nor any person acting on their behalf may be held responsible for the use which may be made of the information contained therein.<br />
                 <a href="https://integritywatch.eu/privacy-policy.pdf" target="_blank">Privacy policy</a> | For any question, please contact: <a href="mailto:rkergueno@transparency.org">rkergueno@transparency.org</a><br />
                 <div>Platform developed by <a href="http://www.chiaragirardelli.net" target="_blank">Chiara Girardelli</a> and Transparency International EU</div>
                 <div class="footer-eu-funding">
