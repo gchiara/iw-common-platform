@@ -36,6 +36,7 @@
                     <tr class="border-b">
                         <td class="p-3 px-5">
                             <div class="data-entry-title">{{$platform->title}}</div>
+                            <div class="data-entry-url">{{$platform->country}}</div>
                             <div class="data-entry-url">{{$platform->url}}</div>
                             <div class="data-entry-description">{{$platform->description}}</div>
                         </td>

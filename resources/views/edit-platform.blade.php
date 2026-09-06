@@ -11,7 +11,7 @@
             <form method="POST" action="/platform/{{ $platform->id }}" enctype="multipart/form-data" class="admin-form">
                 <div class="form-group">
                     <label class="form-field-label" for="name">Title</label>
-                    <input name="title" id="title" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"  placeholder='Title' value="{{ $platform->title }}"></textarea>  
+                    <input name="title" id="title" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"  placeholder='Title' value="{{ $platform->title }}" />  
                     @if ($errors->has('title'))
                         <span class="text-danger">{{ $errors->first('title') }}</span>
                     @endif
@@ -21,9 +21,14 @@
                         <span class="text-danger">{{ $errors->first('description') }}</span>
                     @endif
                     <label class="form-field-label" for="url">Url</label>
-                    <input name="url" id="url" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"  placeholder='Url' value="{{ $platform->url }}"></textarea>  
+                    <input name="url" id="url" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"  placeholder='Url' value="{{ $platform->url }}" />  
                     @if ($errors->has('url'))
                         <span class="text-danger">{{ $errors->first('url') }}</span>
+                    @endif
+                    <label class="form-field-label" for="name">Country</label>
+                    <input name="country" id="country" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"  placeholder='Country' value="{{ $platform->country }}" />
+                    @if ($errors->has('country'))
+                        <span class="text-danger">{{ $errors->first('country') }}</span>
                     @endif
                     <label class="form-field-label" for="order">Position (number)</label>
                     <input name="order" id="order" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"  placeholder='Order number' value="{{ $platform->order }}"></textarea>  

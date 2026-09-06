@@ -3,7 +3,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #0c4475;
+  background: rgba(0, 0, 0, 0.9);
   color: #fff;
   padding: 20px 15px;
   font-size: 13px;
@@ -33,7 +33,7 @@
   background: #d78a08;
   color: #fff;
   display: inline-block;
-  border-radius: 3px;
+  border-radius: 0px;
   padding: 5px 10px;
   text-transform: uppercase;
   transition: 0.4s background;

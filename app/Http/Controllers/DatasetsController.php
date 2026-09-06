@@ -52,6 +52,13 @@ class DatasetsController extends Controller
         return response()->download($path, $dataset->file_path, $headers);
     }
 
+    public function goToLink(Dataset $dataset)
+    {
+        $dataset->increment('downloads_count', 1);
+	    $dataset->save();
+        return redirect()->away($dataset->url);
+    }
+
     public function downloadList()
     {
         $datasets = Dataset::all();
@@ -60,7 +67,7 @@ class DatasetsController extends Controller
         header('Content-Type: application/csv');
         header('Content-Disposition: attachment; filename="'.$filename.'";');
         $f = fopen('php://output', 'w');
-        fputcsv($f, array('title','description','country','date_created','date_updated','downloads','file_name'), $delimiter);
+        fputcsv($f, array('title','description','country','type','date_created','date_updated','downloads','file_name','url'), $delimiter);
         foreach ($datasets as $d) {
             $line = array($d->title,$d->description,$d->country,$d->created_at,$d->updated_at,$d->downloads_count,$d->file_path);
             fputcsv($f, $line, $delimiter);
@@ -79,20 +86,33 @@ class DatasetsController extends Controller
             'title' => 'required',
             'description' => 'required',
             'country' => 'required',
-            'file.*' => 'required|mimes:csv,txt,text/csv,application/json,application/xml,text/xml,text/plain|max:102400'
+            'type' => 'required|in:file,url',
+            'url' => 'nullable|required_if:type,url|url|max:2048',
+            'file.*' => 'required_if:type,file|mimes:csv,txt,text/csv,application/json,application/xml,text/xml,text/plain|max:102400'
         ]);
         $dataset = new Dataset();
         if($request->file()) {
             $fileName = time().'_'.$request->file->getClientOriginalName();
             $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
+            $dataset->file_path = $fileName;
             $dataset->title = $request->title;
             $dataset->description = $request->description;
             $dataset->country = $request->country;
-            $dataset->file_path = $fileName;
+            $dataset->type = $request->type;
+            $dataset->url = $request->url;
             $dataset->user_id = auth()->user()->id;
             $dataset->save();
-            return redirect('/dashboard'); 
-        }
+            return redirect('/dashboard');
+        } else {
+            $dataset->title = $request->title;
+            $dataset->description = $request->description;
+            $dataset->country = $request->country;
+            $dataset->type = $request->type;
+            $dataset->url = $request->url;
+            $dataset->user_id = auth()->user()->id;
+            $dataset->save();
+            return redirect('/dashboard');
+        } 
     }
 
     public function edit(Dataset $dataset)
@@ -125,11 +145,15 @@ class DatasetsController extends Controller
                 'title' => 'required',
                 'description' => 'required',
                 'country' => 'required',
-                'file.*' => 'mimes:csv,txt,text/csv,application/json,application/xml,text/xml,text/plain|max:102400'
+                'type' => 'required|in:file,url',
+                'url' => 'nullable|required_if:type,url|url|max:2048',
+                'file.*' => 'required_if:type,file|mimes:csv,txt,text/csv,application/json,application/xml,text/xml,text/plain|max:102400'
             ]);
             $dataset->title = $request->title;
             $dataset->description = $request->description;
             $dataset->country = $request->country;
+            $dataset->type = $request->type;
+            $dataset->url = $request->url;
             if($request->owner) {
                 $dataset->user_id = $request->owner;
             }

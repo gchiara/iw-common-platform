@@ -13,6 +13,8 @@ class Dataset extends Model
         'name',
         'description',
         'country',
+        'type',
+        'url',
         'file_path'
     ];
 

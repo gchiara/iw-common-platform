@@ -26,6 +26,11 @@
                     @if ($errors->has('url'))
                         <span class="text-danger">{{ $errors->first('url') }}</span>
                     @endif
+                    <label class="form-field-label" for="name">Country</label>
+                    <input name="country" id="country" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"  placeholder='Country'></textarea>  
+                    @if ($errors->has('country'))
+                        <span class="text-danger">{{ $errors->first('country') }}</span>
+                    @endif
                     <label class="form-field-label" for="order">Position (number)</label>
                     <input name="order" id="order" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"  placeholder='Order number'></textarea>  
                     @if ($errors->has('order'))

@@ -21337,11 +21337,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\Work\EU Datasets App\eudatasets\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! E:\Work\EU Datasets App\eudatasets\resources\css\main.scss */"./resources/css/main.scss");
-__webpack_require__(/*! E:\Work\EU Datasets App\eudatasets\resources\css\landing.scss */"./resources/css/landing.scss");
-__webpack_require__(/*! E:\Work\EU Datasets App\eudatasets\resources\css\cookie-consent.scss */"./resources/css/cookie-consent.scss");
-module.exports = __webpack_require__(/*! E:\Work\EU Datasets App\eudatasets\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! E:\Work\IW EU Data Hub\iw-common-platform-main\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! E:\Work\IW EU Data Hub\iw-common-platform-main\resources\css\main.scss */"./resources/css/main.scss");
+__webpack_require__(/*! E:\Work\IW EU Data Hub\iw-common-platform-main\resources\css\landing.scss */"./resources/css/landing.scss");
+__webpack_require__(/*! E:\Work\IW EU Data Hub\iw-common-platform-main\resources\css\cookie-consent.scss */"./resources/css/cookie-consent.scss");
+module.exports = __webpack_require__(/*! E:\Work\IW EU Data Hub\iw-common-platform-main\resources\css\app.css */"./resources/css/app.css");
 
 
 /***/ })

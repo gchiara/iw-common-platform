@@ -27,6 +27,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/dashboard',[DatasetsController::class, 'index'])->name('dashboard');
     Route::post('/dashboard',[DatasetsController::class, 'index']);
     Route::get('/download-dataset/{dataset}', [DatasetsController::class, 'download']);
+    Route::get('/link-dataset/{dataset}', [DatasetsController::class, 'goToLink']);
 });
 
 Route::get('storage/images/{filename}', function ($filename)

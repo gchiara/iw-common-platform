@@ -30,7 +30,8 @@ class PlatformsController extends Controller
             'title' => 'required',
             'description' => 'required',
             'order' => 'required',
-            'file' => 'mimes:jpg,jpeg,png,image/jpeg,image/png|max:1024'
+            'file' => 'mimes:jpg,jpeg,png,image/jpeg,image/png|max:1024',
+            'country' => 'nullable|string|max:255',
         ]);
 
         $platform = new Platform();
@@ -44,6 +45,7 @@ class PlatformsController extends Controller
         $platform->description = $request->description;
         $platform->url = $request->url;
         $platform->order = $request->order;
+        $platform->country = $request->country;
         $platform->save();
         return redirect('/platforms-list'); 
     }
@@ -65,7 +67,8 @@ class PlatformsController extends Controller
                 'title' => 'required',
                 'description' => 'required',
                 'order' => 'required',
-                'file' => 'mimes:jpg,jpeg,png,image/jpeg,image/png|max:1024'
+                'file' => 'mimes:jpg,jpeg,png,image/jpeg,image/png|max:1024',
+                'country' => 'nullable|string|max:255',
             ]);
 
             if($request->file()) {
@@ -77,6 +80,7 @@ class PlatformsController extends Controller
             $platform->description = $request->description;
             $platform->url = $request->url;
             $platform->order = $request->order;
+            $platform->country = $request->country;
             $platform->save();
             return redirect('/platforms-list'); 
     	}    	

@@ -13,6 +13,7 @@ class Platform extends Model
         'description',
         'url',
         'image_path',
-        'order'
+        'order',
+        'country'
     ];
 }

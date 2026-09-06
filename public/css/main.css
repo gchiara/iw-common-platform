@@ -1,5 +1,11 @@
+/*
+$main-color: #0c4475;
+$main-color-lighter: #2c6495;
+$btn-default-color: #2a7aae;
+*/
+
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .page-content-main {
@@ -7,12 +13,12 @@ body {
 }
 
 nav.nav-main {
-  background-color: #0c4475;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
 }
 
 nav.nav-main .nav-logo {
-  max-height: 40px;
+  max-height: 35px;
 }
 
 nav.nav-main .nav-link {
@@ -30,15 +36,27 @@ nav.nav-main .nav-link:hover {
   color: #fff;
 }
 
+nav.nav-main a {
+  font-weight: 700;
+  transition: 0.4s all;
+  color: #333 !important;
+}
+
+nav.nav-main a.active,
+nav.nav-main a:hover {
+  color: #0c4475 !important;
+}
+
 .page-header {
   background-image: url("/img/header-bg.jpg");
   background-size: cover;
 }
 
 .page-header h2 {
+  font-family: Oswald, sans-serif;
   margin-top: 10px;
-  font-size: 25px;
-  font-weight: 300;
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .header-description,
@@ -58,10 +76,10 @@ nav.nav-main .nav-link:hover {
 
 .btn-default {
   display: inline-block;
-  background: #2a7aae;
+  background: #2d85c6;
   transition: 0.4s background;
   color: #fff;
-  border-radius: 4px;
+  border-radius: 0px;
   font-size: 14px;
   padding: 3px 10px;
 }
@@ -78,9 +96,18 @@ nav.nav-main .nav-link:hover {
   background: #d03232;
 }
 
+.btn-default.btn-yellow {
+  background: #d78a08;
+}
+
+.btn-default.btn-yellow:hover {
+  background: #c77a08;
+}
+
 .btn-default.btn-large {
-  font-size: 16px;
+  font-size: 15px;
   padding: 5px 15px;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 768px) {
@@ -88,6 +115,12 @@ nav.nav-main .nav-link:hover {
     font-size: 14px;
     padding: 5px 15px;
   }
+}
+
+.btn-default.btn-country-filter {
+  margin-bottom: 5px;
+  font-weight: 600;
+  padding: 3px 12px;
 }
 
 .btn-icon-small {
@@ -173,6 +206,27 @@ nav.nav-main .nav-link:hover {
 .data-entry-title {
   font-weight: 600;
   color: #0c4475;
+}
+
+.data-entry-type {
+  background: #ccc;
+  border-radius: 20px;
+  padding: 3px 10px;
+  color: #fff;
+  font-size: 11px;
+  text-align: center;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.data-entry-type.data-entry-type-file {
+  background: #3b95d0;
+}
+
+.data-entry-type.data-entry-type-url {
+  background: #e3a92b;
 }
 
 .data-entry-description {
@@ -418,7 +472,7 @@ footer .footer-eu-funding .text {
 }
 
 .bg-iw {
-  background-color: #0c4475;
+  background-color: #1767a7;
 }
 
 .auth-logo-container {
@@ -439,8 +493,10 @@ footer .footer-eu-funding .text {
 }
 
 .auth-logo-container .auth-logo-text {
-  color: #d78a08;
-  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
   text-align: center;
   font-size: 30px;
   margin-top: 10px;

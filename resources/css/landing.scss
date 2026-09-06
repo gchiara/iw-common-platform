@@ -3,7 +3,7 @@ $main-color-lighter: #2c6495;
 $btn-default-color: #2a7aae;
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     background: #f6f7f9;
 }
 
@@ -15,7 +15,7 @@ body {
     box-shadow: 4px 4px 6px rgba(0,0,0,0.2);
 }
 .nav-logo {
-    max-height: 50px;
+    max-height: 46px;
 }
 .top-nav {
     .top-nav-left {
@@ -23,35 +23,50 @@ body {
     }
     .top-nav-right {
         padding: 15px;
+        a {
+            font-weight: 700;
+        }
     }
 }
 
 //INFO/TEXT AREA
 
+.yellow-text {
+    color: #d78a08;
+}
 .landing-info-area {
-    padding: 30px;
+    padding: 10px 30px 50px 30px;
     color: #fff;
     max-width: 1400px;
     margin: 0 auto;
     z-index: 10;
     position: relative;
     h1 {
-        font-size: 40px;
-        font-weight: 300;
+        font-size: 60px;
+        font-weight: 600;
+        letter-spacing: 1px;
         line-height: 120%;
+        font-family: Oswald, sans-serif;
+        //text-transform: uppercase;
+    }
+    h2 {
+        font-size: 20px;
+        font-weight: 800;
+        line-height: 120%;
+        margin-top: 10px;
     }
     .description-text {
-        font-size: 13px;
+        font-size: 14px;
         width: 100%;
         max-width: 1000px;
-        margin: 30px 0 0 0;
+        margin: 30px 0 0px 0;
         line-height: 160%;
         p {
             margin-bottom: 15px;
         }
     }
     .landing-info-btn {
-        margin: 50px 0 -100px 0;
+        margin: 40px 0 0px 0;
     }
 }
 .landing-cta-container {
@@ -117,8 +132,8 @@ body {
         padding: 20px 15px 30px 15px;
     }
     .platform-box-title {
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 16px;
+        font-weight: 800;
         color: $main-color;
     }
     .platform-box-description {
@@ -138,19 +153,20 @@ body {
 //BUTTONS
 
 .landing-btn {
-    border-radius: 4px;
+    border-radius: 0px;
     border: none;
     color: #fff;
     background: #135288;
     padding: 5px 15px;
     font-size: 13px;
-    text-transform: uppercase;
+    font-weight: 600;
+    //text-transform: uppercase;
     transition: .4s all;
     cursor: pointer;
     i {
         vertical-align: middle;
         margin-left: 15px;
-        font-size: 11px;
+        font-size: 12px;
         position: relative;
         top: -1px;
     }
@@ -159,7 +175,8 @@ body {
     }
     &.yellow-btn {
         background: #d78a08;
-        font-size: 15px;
+        font-size: 16px;
+        font-weight: 700;
         padding: 8px 15px;
         &:hover {
             background: #c77a08;
@@ -167,7 +184,40 @@ body {
     }
 }
 
+//MAP
+
+.map-container {
+    //max-width: 1400px;
+    max-width: 100%;
+    margin: 0 auto;
+    background: #f4f5f6;
+    #map {
+        width: 100%;
+        height: 600px;
+        margin: 0 auto;
+        path {
+            stroke-width: 0.5;
+            stroke: #ffffff;
+            cursor: pointer;
+        }
+    }
+}
+.tooltip {
+    background: #fff;
+    padding: 8px;
+    border-radius: 2px;
+    .tooltip-title {
+        font-weight: 700;
+        font-size: 14px;
+    }
+    .tooltip-url {
+        font-style: italic;
+        font-size: 12px;
+    }
+}
+
 //FOOTER
+
 footer {
     background: #e3e7ef;
     .footer-inner {

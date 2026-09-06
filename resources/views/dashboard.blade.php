@@ -11,7 +11,7 @@
     </div>
 </x-slot>
 
-<div class="py-12">
+<div class="py-6">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <!-- Filters -->
         <div class="filters-container">
@@ -19,11 +19,11 @@
             <form action="/dashboard" class="inline-block">
                 <input type="hidden" name="country" value="{{ $country }}">
                 @if($selected_country == $country)
-                    <button type="submit" name="filter" value="true" formmethod="POST" class="btn-default active focus:outline-none focus:shadow-outline">
+                    <button type="submit" name="filter" value="true" formmethod="POST" class="btn-default btn-country-filter active focus:outline-none focus:shadow-outline">
                         {{ $country }}
                     </button>
                 @else
-                    <button type="submit" name="filter" value="true" formmethod="POST" class="btn-default focus:outline-none focus:shadow-outline">
+                    <button type="submit" name="filter" value="true" formmethod="POST" class="btn-default btn-country-filter focus:outline-none focus:shadow-outline">
                         {{ $country }}
                     </button>
                 @endif
@@ -31,7 +31,7 @@
             </form>
             @endforeach
             <form action="/dashboard" class="inline-block">
-                <button type="submit" name="filter" value="true" formmethod="POST" class="btn-default btn-red focus:outline-none focus:shadow-outline">
+                <button type="submit" name="filter" value="true" formmethod="POST" class="btn-default btn-country-filter btn-yellow focus:outline-none focus:shadow-outline">
                     View All
                 </button>
                 {{ csrf_field() }}
@@ -82,6 +82,13 @@
                     <tr class="border-b">
                         <td class="p-3 px-5">
                             <div class="data-entry-title">{{$dataset->title}}</div>
+                            @if($dataset->type == 'file')
+                            <div class="data-entry-type data-entry-type-file">Downloadable file</div>
+                            @endif
+                            @if($dataset->type == 'url')
+                            <div class="data-entry-type data-entry-type-url">External link</div>
+                            <div class="data-entry-url">{{$dataset->url}}</div>
+                            @endif
                             <div class="data-entry-description">{{$dataset->description}}</div>
                             @if (auth()->user()->isAdmin() or auth()->user()->isEditor())
                                 <div class="data-entry-downloads"><strong>Downloads:</strong> {{$dataset->downloads_count}}</div>
@@ -92,9 +99,16 @@
                         {{$dataset->country}}
                         </td>
                         <td class="text-right p-3 px-5">
+                            @if($dataset->type == 'file')
                             <a href="download-dataset/{{$dataset->id}}" class="btn-default mr-1 focus:outline-none focus:shadow-outline">
                                 <i class="fas fa-download btn-icon-only"></i>
                             </a>
+                            @endif
+                            @if($dataset->type == 'url')
+                            <a href="link-dataset/{{$dataset->id}}" target="_blank" class="btn-default mr-1 focus:outline-none focus:shadow-outline">
+                                <i class="fas fa-link btn-icon-only"></i>
+                            </a>
+                            @endif
         
                             @can('edit-dataset', $dataset)
                             <a href="/dataset/{{$dataset->id}}" name="edit" class="btn-default mr-1 focus:outline-none focus:shadow-outline">
@@ -119,6 +133,13 @@
                     <div class="data-box">
                         <div class="data-box-inner">
                             <div class="data-entry-title">{{$dataset->title}}</div>
+                            @if($dataset->type == 'file')
+                            <div class="data-entry-type data-entry-type-file">Downloadable file</div>
+                            @endif
+                            @if($dataset->type == 'url')
+                            <div class="data-entry-type data-entry-type-url">External link</div>
+                            <div class="data-entry-url">{{$dataset->url}}</div>
+                            @endif
                             <div class="data-entry-country"><strong>{{$dataset->country}}</strong></div>
                             <div class="data-entry-description">{{$dataset->description}}</div>
                             @if (auth()->user()->isAdmin() or auth()->user()->isEditor())
@@ -126,9 +147,16 @@
                             @endif
                             <div class="data-entry-date"><strong>Last updated on:</strong> {{$dataset->updated_at}}</div>
                             <div class="data-box-actions">
+                                @if($dataset->type == 'file')
                                 <a href="download-dataset/{{$dataset->id}}" class="btn-default mr-1 focus:outline-none focus:shadow-outline">
                                     <i class="fas fa-download btn-icon-only"></i>
                                 </a>
+                                @endif
+                                @if($dataset->type == 'url')
+                                <a href="link-dataset/{{$dataset->id}}" target="_blank" class="btn-default mr-1 focus:outline-none focus:shadow-outline">
+                                    <i class="fas fa-link btn-icon-only"></i>
+                                </a>
+                                @endif
                                 @can('edit-dataset', $dataset)
                                 <a href="/dataset/{{$dataset->id}}" name="edit" class="btn-default mr-1 focus:outline-none focus:shadow-outline">
                                     <i class="fas fa-pen btn-icon-small"></i>Edit

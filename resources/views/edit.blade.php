@@ -39,12 +39,29 @@
                         @endforeach
                     </select>
                     @endif
-                    <div class="custom-file">
-                        <label class="form-field-label" for="chooseFile">Select new dataset file (.json, .csv, .tsv)</label>
-                        <input type="file" name="file" class="custom-file-input" id="chooseFile">
-                        @if ($errors->has('file'))
-                            <span class="text-danger">{{ $errors->first('file') }}</span>
+                    <div x-data="{ type: '{{ $dataset->type }}' }">
+                        <label class="form-field-label" for="country">Dataset type (File or URL)</label>
+                        <select id="type" x-model="type" name="type" class="form-field-default border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white">
+                            <option value="file" {{$dataset->type == 'file' ? 'selected':''}}>File</option>
+                            <option value="url" {{$dataset->type == 'url' ? 'selected':''}}>URL</option>
+                        </select>
+                        @if ($errors->has('type'))
+                            <span class="text-danger">{{ $errors->first('type') }}</span>
                         @endif
+                        <div x-show="type === 'url'">
+                            <label class="form-field-label" for="url">Url (For datasets based on external links)</label>
+                            <input id="url" name="url" class="form-field-default border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"  placeholder='Insert a valid url' value="{{ $dataset->url }}" />
+                            @if ($errors->has('url'))
+                                <span class="text-danger">{{ $errors->first('url') }}</span>
+                            @endif
+                        </div>
+                        <div x-show="type === 'file'" class="custom-file">
+                            <label class="form-field-label" for="chooseFile">Select new dataset file (.json, .csv, .tsv)</label>
+                            <input type="file" name="file" class="custom-file-input" id="chooseFile">
+                            @if ($errors->has('file'))
+                                <span class="text-danger">{{ $errors->first('file') }}</span>
+                            @endif
+                        </div>
                     </div>
                 </div>
 
